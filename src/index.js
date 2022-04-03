@@ -7,10 +7,10 @@ const App = () => {
   return (
     <Fragment>
       <Block bgColor='blue' color='red'>
-        <h1>Hello Mario World!!</h1>
+        <h1>Hello Mario World!!!</h1>
       </Block>
       <Block color='orange'>
-        <h1>Hello Lugi World!!</h1>
+        <h1>Hello Lugi World!!!</h1>
       </Block>
     </Fragment>
   );
