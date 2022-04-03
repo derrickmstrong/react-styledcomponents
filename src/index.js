@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
 import styled from 'styled-components';
 
 const App = () => {
   return (
     <Fragment>
-      <Block bgColor='blue' color='red'>
+      <Block>
         <h1>Hello Mario World!!!</h1>
       </Block>
-      <Block color='orange'>
+      <Block bgColor='green' color='orange'>
         <h1>Hello Lugi World!!!</h1>
       </Block>
     </Fragment>
@@ -17,10 +17,10 @@ const App = () => {
 };
 
 const Block = styled.div`
-  background-color: ${({ bgColor }) => bgColor || 'green'};
-  color: ${({ color }) => color || 'blue'};
+  background-color: ${({ bgColor }) => bgColor || 'blue'};
+  color: ${({ color }) => color || 'red'};
   padding: 10px;
-  border: 3px solid ${({ color }) => color || 'blue'};
+  border: 3px solid ${({ color }) => color || 'red'};
   border-radius: 5px;
   display: inline-block;
   margin: 5px;
@@ -31,4 +31,4 @@ const Block = styled.div`
   }
 `;
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
