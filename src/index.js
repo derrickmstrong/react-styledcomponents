@@ -1,17 +1,34 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import styled from 'styled-components';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+  return (
+    <Fragment>
+      <Block bgColor='blue' color='red'>
+        <h1>Hello Mario World!!</h1>
+      </Block>
+      <Block color='orange'>
+        <h1>Hello Lugi World!!</h1>
+      </Block>
+    </Fragment>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Block = styled.div`
+  background-color: ${({ bgColor }) => bgColor || 'green'};
+  color: ${({ color }) => color || 'blue'};
+  padding: 10px;
+  border: 3px solid ${({ color }) => color || 'blue'};
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: gray;
+    color: #fff;
+  }
+`;
+
+ReactDOM.render(<App />, document.getElementById('root'));
